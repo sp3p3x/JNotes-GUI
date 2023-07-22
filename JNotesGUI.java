@@ -13,18 +13,18 @@ public class JNotesGUI {
         mainFrame.setLayout(null);
         mainFrame.setVisible(true);
 
-        inputUI();
+        mainUI();
     }
 
     void mainUI() {
-        JButton saveButton = new JButton("mainui");
-        saveButton.setBounds(230, 430, 150, 80);
-        mainFrame.add(saveButton);
+        
+        navigateButton("New Note", 230, 50, 150, 80, "input");
+        
     }
 
     void inputUI() {
 
-        backButton("main");
+        navigateButton("main");
 
         JButton saveButton = new JButton("SAVE AS NEW");
         JTextArea input = new JTextArea();
@@ -39,7 +39,7 @@ public class JNotesGUI {
         input.setWrapStyleWord(true);
 
         saveButton.setBounds(230, 490, 150, 40);
-        scrollPane.setBounds(20, 70, 560, 400);
+        scrollPane.setBounds(20, 50, 560, 420);
 
         mainFrame.add(scrollPane);
         mainFrame.add(saveButton);
@@ -48,11 +48,11 @@ public class JNotesGUI {
         validate();
     }
 
-    void backButton(String text, int x, int y, int width, int height, String ui) {
-        JButton backButton = new JButton(text);
-        backButton.setBounds(x, y, width, height);
-        mainFrame.add(backButton);
-        backButton.addActionListener(new ActionListener() {
+    void navigateButton(String text, int x, int y, int width, int height, String ui) {
+        JButton navigateButton = new JButton(text);
+        navigateButton.setBounds(x, y, width, height);
+        mainFrame.add(navigateButton);
+        navigateButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 reset();
@@ -65,16 +65,16 @@ public class JNotesGUI {
         });
     }
 
-    void backButton(String ui) {
+    void navigateButton(String ui) {
         String text = "back";
         int x = 20;
         int y = 10;
         int width = 70;
         int height = 30;
-        JButton backButton = new JButton(text);
-        backButton.setBounds(x, y, width, height);
-        mainFrame.add(backButton);
-        backButton.addActionListener(new ActionListener() {
+        JButton navigateButton = new JButton(text);
+        navigateButton.setBounds(x, y, width, height);
+        mainFrame.add(navigateButton);
+        navigateButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 reset();
